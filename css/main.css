@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+Hola
 [class*="col-"]{float: left;}
 
 /* Extra small devices (phones, 575px and down) */
