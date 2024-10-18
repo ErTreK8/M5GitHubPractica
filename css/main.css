@@ -27,3 +27,29 @@ div{
     align-items: center;
     height: auto ;
 }
+
+
+img{
+    margin:0%;
+    height: 12vh;
+    width: 8em;
+    background-color: rgba(246, 246, 246, 0.5);
+    padding: 2%;
+}
+#form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction:column;
+    align-items: center;
+    margin: 0%;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+}
