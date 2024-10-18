@@ -1,3 +1,51 @@
+var contadorCartasGiradas = 0;
+var imagenesCreadas = 0;
+var cont1 = 0;
+var cont2 = 0;
+var img1;
+var img2;
+var c1;
+var c2;
+var numeros = [];
+var contadorClicks=0;
+
+var imagenes = [
+    "./img/blaze.jpeg",
+    "./img/bookshelf.jpeg",
+    "./img/brick.jpeg",
+    "./img/coal_ore.jpeg",
+    "./img/cobblestone.jpg",
+    "./img/crafting_table.jpeg",
+    "./img/diamond_ore.jpeg",
+    "./img/dirt_block.jpeg",
+    "./img/furnace_off.jpeg",
+    "./img/furnace_on.jpeg",
+    "./img/glowstone.jpeg",
+    "./img/gold_ore.jpeg",
+    "./img/grass_block.jpeg",
+    "./img/iron_ore.jpeg",
+    "./img/jack_o_lantern.jpeg",
+    "./img/lava.jpeg",
+    "./img/obsidian.jpeg",
+    "./img/pig.jpeg",
+    "./img/pigman.jpeg",
+    "./img/pumpkin.jpeg",
+    "./img/sheep.jpeg",
+    "./img/skeleton.jpeg",
+    "./img/slime.jpeg",
+    "./img/spider.jpeg",
+    "./img/steve.jpeg",
+    "./img/stone.jpeg",
+    "./img/tnt.jpeg",
+    "./img/villager.jpeg",
+    "./img/water.jpeg",
+    "./img/wither_head.jpeg",
+    "./img/zombie.jpeg",
+    "./img/magmacube.jpeg"
+];
+var vector = [];
+var contador = 0;
+
 function girarImagen(imagen) {
     contadorClicks+=1;
     var campo = document.getElementById("formulario");
@@ -60,4 +108,14 @@ function girarImagen(imagen) {
         }
     }    
 
+}
+
+
+function sonIguales(c1, c2) {
+    var carta = false;
+    if (c1 == c2) {
+        carta = true;
+    }
+    else { carta = false; }
+    return carta;
 }
