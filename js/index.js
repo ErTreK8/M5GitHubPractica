@@ -45,6 +45,70 @@ var imagenes = [
 ];
 var vector = [];
 var contador = 0;
+function hazCuadrado() {
+    var campo = document.getElementById("formulario");
+    var valor = campo.value;
+    var long = valor * valor;
+    var origen = "./img/backCard.jpeg"
+    var impar = false;
+    if (long >= 9 && long <= 64 && contador == 0) {
+        contador = 1;
+        var cont = 0;
+        for (var i = 0; i < long; i++) {
+            if (long % 2 == 0 || long % 2 != 0 && i < (long - 1)) {
+                do {
+                    if (long % 2 == 0) { var indice = Math.floor(Math.random() * (long / 2)); }
+                    else { var indice = Math.floor(Math.random() * ((long - 1) / 2)); }
+                    impar = true;
+                    var imagen = imagenes[indice];
+                    cont = sumaContadorRepetidas(imagen, i);
+                } while (cont == 2);
+                vector[i] = imagen;
+                numeros[i] = vector.indexOf(imagen);
+            }
+            else {
+                var numrand = Math.floor(Math.random() * ((long - 1) / 2));
+                imagen = "./img/extra.jpeg";
+                vector[i] = imagen;
+                numeros[i] = vector.indexOf(imagen);
+            }
+        }
+        for (var i = 0; i < valor; i++) {
+            var seccion = document.getElementById("seccion");
+            var filas = document.createElement("div");
+            seccion.appendChild(filas);
+            for (var j = 0; j < valor; j++) {
+                var columnas = document.createElement("img");
+                columnas.src = origen;
+                columnas.width = "120px";
+                columnas.height = "120px";
+                columnas.onclick = function () {
+                    girarImagen(this);
+                };
+                filas.appendChild(columnas);
+                imagenesCreadas++;
+            }
+        }
+    }
+    else if (contador == 0) {
+        alert("Dame un numero entre 3 y 8 porfavor");
+    }
+    else {
+        alert("Ya has introducido un Numero");
+    }
+}
+
+function sumaContadorRepetidas(imagen, qtt) {
+    var cont = 0;
+    for (var j = 0; j < qtt; j++) {
+        if (vector[j] == imagen) {
+            cont++;
+        }
+    }
+    return cont;
+}
+var valor;
+var total;
 
 function girarImagen(imagen) {
     contadorClicks+=1;
@@ -109,7 +173,6 @@ function girarImagen(imagen) {
     }    
 
 }
-
 
 function sonIguales(c1, c2) {
     var carta = false;
